@@ -39,15 +39,15 @@
 		A5DD60B3246C51BF003BBC11 /* HomeWork14.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWork14.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5DD60B6246C51BF003BBC11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5DD60B8246C51BF003BBC11 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A5DD60BA246C51BF003BBC11 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = HomeWork14/ViewController.swift; sourceTree = SOURCE_ROOT; };
+		A5DD60BA246C51BF003BBC11 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = HomeWork14/Controllers/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		A5DD60BD246C51BF003BBC11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5DD60BF246C51C2003BBC11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5DD60C2246C51C2003BBC11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5DD60C4246C51C2003BBC11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A5E1910D2473F5D9004FC133 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = HomeWork14/SecondViewController.swift; sourceTree = SOURCE_ROOT; };
-		A5E1910F2473F5EA004FC133 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherViewController.swift; path = HomeWork14/WeatherViewController.swift; sourceTree = SOURCE_ROOT; };
+		A5E1910D2473F5D9004FC133 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = HomeWork14/Controllers/SecondViewController.swift; sourceTree = SOURCE_ROOT; };
+		A5E1910F2473F5EA004FC133 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherViewController.swift; path = HomeWork14/Controllers/WeatherViewController.swift; sourceTree = SOURCE_ROOT; };
 		A5E191112475288E004FC133 /* Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Persistance.swift; path = HomeWork14/Persistance.swift; sourceTree = SOURCE_ROOT; };
-		A5E19113247555DD004FC133 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ThirdViewController.swift; path = HomeWork14/ThirdViewController.swift; sourceTree = SOURCE_ROOT; };
+		A5E19113247555DD004FC133 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ThirdViewController.swift; path = HomeWork14/Controllers/ThirdViewController.swift; sourceTree = SOURCE_ROOT; };
 		A5E19117247568EF004FC133 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		A5E1911924757ED5004FC133 /* ToDoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoList.swift; sourceTree = "<group>"; };
 		B1FD04565520EA676E4C8ABD /* Pods-HomeWork14.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeWork14.release.xcconfig"; path = "Target Support Files/Pods-HomeWork14/Pods-HomeWork14.release.xcconfig"; sourceTree = "<group>"; };
@@ -83,6 +83,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A57922BD248971A400BCDBFF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A5E1910F2473F5EA004FC133 /* WeatherViewController.swift */,
+				A5DD60BA246C51BF003BBC11 /* ViewController.swift */,
+				A5DD60B8246C51BF003BBC11 /* SceneDelegate.swift */,
+				A5E1910D2473F5D9004FC133 /* SecondViewController.swift */,
+				A5E19113247555DD004FC133 /* ThirdViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		A5DD60AA246C51BF003BBC11 = {
 			isa = PBXGroup;
 			children = (
@@ -105,11 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				A5DD60B6246C51BF003BBC11 /* AppDelegate.swift */,
-				A5DD60B8246C51BF003BBC11 /* SceneDelegate.swift */,
-				A5E19113247555DD004FC133 /* ThirdViewController.swift */,
-				A5E1910D2473F5D9004FC133 /* SecondViewController.swift */,
-				A5DD60BA246C51BF003BBC11 /* ViewController.swift */,
-				A5E1910F2473F5EA004FC133 /* WeatherViewController.swift */,
+				A57922BD248971A400BCDBFF /* Controllers */,
 				A5F74ECB247EAE30001AB93D /* Cells */,
 				A5F74EC5247EADA6001AB93D /* Models */,
 				A5F74EC8247EADEE001AB93D /* Persistances */,
