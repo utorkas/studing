@@ -33,7 +33,7 @@
 		A5843BA1247AA4C20040BECE /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		A5AB9DF42472C1C000D86194 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		A5DC35E2247D7E9E006DFEEB /* AlamoLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoLoader.swift; sourceTree = "<group>"; };
-		A5DC35E8247D7F30006DFEEB /* AlamoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlamoCell.swift; path = HomeWork14/AlamoCell.swift; sourceTree = SOURCE_ROOT; };
+		A5DC35E8247D7F30006DFEEB /* AlamoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlamoCell.swift; path = HomeWork14/Cells/AlamoCell.swift; sourceTree = SOURCE_ROOT; };
 		A5DC35EA247D818A006DFEEB /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		A5DC35EC247D832C006DFEEB /* WeatherPersistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPersistance.swift; sourceTree = "<group>"; };
 		A5DD60B3246C51BF003BBC11 /* HomeWork14.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWork14.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,7 +46,7 @@
 		A5DD60C4246C51C2003BBC11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5E1910D2473F5D9004FC133 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = HomeWork14/Controllers/SecondViewController.swift; sourceTree = SOURCE_ROOT; };
 		A5E1910F2473F5EA004FC133 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherViewController.swift; path = HomeWork14/Controllers/WeatherViewController.swift; sourceTree = SOURCE_ROOT; };
-		A5E191112475288E004FC133 /* Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Persistance.swift; path = HomeWork14/Persistance.swift; sourceTree = SOURCE_ROOT; };
+		A5E191112475288E004FC133 /* Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Persistance.swift; path = HomeWork14/Persistances/Persistance.swift; sourceTree = SOURCE_ROOT; };
 		A5E19113247555DD004FC133 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ThirdViewController.swift; path = HomeWork14/Controllers/ThirdViewController.swift; sourceTree = SOURCE_ROOT; };
 		A5E19117247568EF004FC133 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		A5E1911924757ED5004FC133 /* ToDoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoList.swift; sourceTree = "<group>"; };
@@ -88,11 +88,19 @@
 			children = (
 				A5E1910F2473F5EA004FC133 /* WeatherViewController.swift */,
 				A5DD60BA246C51BF003BBC11 /* ViewController.swift */,
-				A5DD60B8246C51BF003BBC11 /* SceneDelegate.swift */,
 				A5E1910D2473F5D9004FC133 /* SecondViewController.swift */,
 				A5E19113247555DD004FC133 /* ThirdViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A593FB8C248974D000F502B4 /* Persistances */ = {
+			isa = PBXGroup;
+			children = (
+				A5DC35EC247D832C006DFEEB /* WeatherPersistance.swift */,
+				A5E191112475288E004FC133 /* Persistance.swift */,
+			);
+			path = Persistances;
 			sourceTree = "<group>";
 		};
 		A5DD60AA246C51BF003BBC11 = {
@@ -116,11 +124,12 @@
 		A5DD60B5246C51BF003BBC11 /* HomeWork14 */ = {
 			isa = PBXGroup;
 			children = (
+				A593FB8C248974D000F502B4 /* Persistances */,
 				A5DD60B6246C51BF003BBC11 /* AppDelegate.swift */,
+				A5E272F62489746B00F54868 /* Models */,
+				A5DD60B8246C51BF003BBC11 /* SceneDelegate.swift */,
+				A5E272F4248973E600F54868 /* Cells */,
 				A57922BD248971A400BCDBFF /* Controllers */,
-				A5F74ECB247EAE30001AB93D /* Cells */,
-				A5F74EC5247EADA6001AB93D /* Models */,
-				A5F74EC8247EADEE001AB93D /* Persistances */,
 				A5DD60BC246C51BF003BBC11 /* Main.storyboard */,
 				A5AB9DF32472C1C000D86194 /* Model.xcdatamodeld */,
 				A5DD60BF246C51C2003BBC11 /* Assets.xcassets */,
@@ -130,33 +139,24 @@
 			path = HomeWork14;
 			sourceTree = "<group>";
 		};
-		A5F74EC5247EADA6001AB93D /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				A5E1911924757ED5004FC133 /* ToDoList.swift */,
-				A5DC35EA247D818A006DFEEB /* Weather.swift */,
-				A5DC35E2247D7E9E006DFEEB /* AlamoLoader.swift */,
-				A5843BA1247AA4C20040BECE /* RealmModel.swift */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
-		A5F74EC8247EADEE001AB93D /* Persistances */ = {
-			isa = PBXGroup;
-			children = (
-				A5E191112475288E004FC133 /* Persistance.swift */,
-				A5DC35EC247D832C006DFEEB /* WeatherPersistance.swift */,
-			);
-			name = Persistances;
-			sourceTree = "<group>";
-		};
-		A5F74ECB247EAE30001AB93D /* Cells */ = {
+		A5E272F4248973E600F54868 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				A5E19117247568EF004FC133 /* TableViewCell.swift */,
 				A5DC35E8247D7F30006DFEEB /* AlamoCell.swift */,
 			);
-			name = Cells;
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A5E272F62489746B00F54868 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A5843BA1247AA4C20040BECE /* RealmModel.swift */,
+				A5DC35EA247D818A006DFEEB /* Weather.swift */,
+				A5E1911924757ED5004FC133 /* ToDoList.swift */,
+				A5DC35E2247D7E9E006DFEEB /* AlamoLoader.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
