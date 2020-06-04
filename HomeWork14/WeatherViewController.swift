@@ -34,8 +34,8 @@ extension WeatherViewController: AlamoCurrentWeatherDelegate {
     func cities(city: String, temp: Double) {
         WeatherPersistance.shared.cityName = city
         WeatherPersistance.shared.currentTemp = String(format: "%.0f", temp-273.15)
-        alamoCity.text = WeatherPersistance.shared.cityName
-        alamoTempCurrent.text = WeatherPersistance.shared.currentTemp
+        //alamoCity.text = WeatherPersistance.shared.cityName
+        //alamoTempCurrent.text = WeatherPersistance.shared.currentTemp
     }
 }
 
@@ -47,9 +47,13 @@ extension WeatherViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AlamoCell") as! AlamoCell
         let model = categories[indexPath.row]
-        cell.alamoDate.text = model.dt_txt
+        //cell.alamoDate.text = model.dt_txt
+        WeatherPersistance.shared.date = model.dt_txt
+        cell.alamoDate.text = WeatherPersistance.shared.date
         let tempCels = model.temp! - 273.15
-        cell.alamoTemp.text = String(format: "%.0f", tempCels)
+        //cell.alamoTemp.text = String(format: "%.0f", tempCels)
+        WeatherPersistance.shared.futureTemp = String(format: "%.0f", tempCels)
+        cell.alamoTemp.text = WeatherPersistance.shared.futureTemp
         return cell
     }
 }

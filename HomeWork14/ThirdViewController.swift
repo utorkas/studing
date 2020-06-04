@@ -60,13 +60,42 @@ extension ThirdViewController: UITableViewDelegate, UITableViewDataSource{
         else { cell.accessoryType = .none }
         return cell
     }
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
+    func tableView(_ tableView: UITableView, canEditRowAtindexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Удалить") {_,_,_ in
             let task = self.realm.objects(Tasks.self)[indexPath.row]
             try! self.realm.write{
                 self.realm.delete(task)
             }
-            tableView.deleteRows(at: [indexPath], with: .fade) }
+            self.toDoTableView.deleteRows(at: [indexPath], with: .fade)
+            self.toDoTableView.reloadData()
+        }
+        let changeAction = UIContextualAction(style: .normal, title: "Изменить") {_,_,_ in
+            let alertController = UIAlertController(title: "Изменить задачу", message: "Введите задачу", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "Добавить", style: .default) { (action) in
+                let text = alertController.textFields?.first?.text
+                let task = self.realm.objects(Tasks.self)[indexPath.row]
+                try! self.realm.write {
+                    task.name = text!
+                }
+                self.toDoTableView.reloadData()
+            }
+            
+            let cancelButton = UIAlertAction(title: "Отменить", style: .cancel)
+            
+            alertController.addTextField(configurationHandler: nil)
+            alertController.addAction(action)
+            alertController.addAction(cancelButton)
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction, changeAction])
+        configuration.performsFirstActionWithFullSwipe = true
+        
+        return configuration
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         toDoTableView.deselectRow(at: indexPath, animated: true)

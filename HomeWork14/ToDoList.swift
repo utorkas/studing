@@ -52,7 +52,7 @@ func removeData(at index: Int){
      print("Could not save \(error), \(error.userInfo)")}
 }
 
-func changeData(at index: Int){
+func changeStatus(at index: Int){
     guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
     let managedContext = appDelegate.persistentContainer.viewContext
     
@@ -64,4 +64,16 @@ func changeData(at index: Int){
      do{ try managedContext.save() }
      catch let error as NSError {
      print("Could not save \(error), \(error.userInfo)")}
+}
+
+func changeData(name: String, index: Int){
+    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+       let managedContext = appDelegate.persistentContainer.viewContext
+       let object = task[index]
+    if (object.value(forKey: "name") as? String) != nil {
+        object.setValue(name, forKey: "name")
+    }
+        do{ try managedContext.save() }
+        catch let error as NSError {
+        print("Could not save \(error), \(error.userInfo)")}
 }

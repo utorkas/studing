@@ -276,12 +276,18 @@
                                                 <action selector="addTask:" destination="2IP-MO-DBp" eventType="touchUpInside" id="7Qk-1q-i8m"/>
                                             </connections>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enC-tN-vN3">
+                                            <rect key="frame" x="20" y="7" width="30" height="30"/>
+                                            <state key="normal" title="Edit"/>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstItem="hL3-au-9n8" firstAttribute="centerY" secondItem="Etr-qf-Leb" secondAttribute="centerY" id="BFs-bZ-fTD"/>
                                         <constraint firstItem="TWi-02-xPL" firstAttribute="centerY" secondItem="Etr-qf-Leb" secondAttribute="centerY" id="BPd-ON-aOC"/>
+                                        <constraint firstItem="enC-tN-vN3" firstAttribute="leading" secondItem="Etr-qf-Leb" secondAttribute="leading" constant="20" id="BRV-Wl-Ozc"/>
                                         <constraint firstAttribute="trailing" secondItem="TWi-02-xPL" secondAttribute="trailing" constant="20" id="ZzQ-0f-teY"/>
+                                        <constraint firstItem="enC-tN-vN3" firstAttribute="centerY" secondItem="Etr-qf-Leb" secondAttribute="centerY" id="tSM-Rs-e46"/>
                                         <constraint firstItem="hL3-au-9n8" firstAttribute="centerX" secondItem="Etr-qf-Leb" secondAttribute="centerX" id="vvU-GH-ffB"/>
                                     </constraints>
                                 </view>
