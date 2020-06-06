@@ -75,7 +75,7 @@ extension ThirdViewController: UITableViewDelegate, UITableViewDataSource{
         let changeAction = UIContextualAction(style: .normal, title: "Изменить") {_,_,_ in
             let alertController = UIAlertController(title: "Изменить задачу", message: "Введите задачу", preferredStyle: .alert)
             
-            let action = UIAlertAction(title: "Добавить", style: .default) { (action) in
+            let action = UIAlertAction(title: "Изменить", style: .default) { (action) in
                 let text = alertController.textFields?.first?.text
                 let task = self.realm.objects(Tasks.self)[indexPath.row]
                 try! self.realm.write {

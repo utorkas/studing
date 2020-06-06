@@ -69,7 +69,7 @@ extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
             }
         let changeAction2 = UIContextualAction(style: .normal, title: "Изменить") {_,_,_ in
             let alertController = UIAlertController(title: "Изменить задачу", message: "Введите задачу", preferredStyle: .alert)
-            let action = UIAlertAction(title: "Добавить", style: .default) { (action) in
+            let action = UIAlertAction(title: "Изменить", style: .default) { (action) in
                 let text = alertController.textFields?.first?.text
                 changeData(name: text!, index: indexPath.row)
                 self.toDoTableView.reloadData()

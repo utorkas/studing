@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7B19E0800174001B098FC803 /* Pods_HomeWork14.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F610B58F06DEC0DCBE52907 /* Pods_HomeWork14.framework */; };
+		A54220D0248B9CF600FCC2AF /* JsonURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54220CF248B9CF600FCC2AF /* JsonURLs.swift */; };
 		A5843BA2247AA4C20040BECE /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5843BA1247AA4C20040BECE /* RealmModel.swift */; };
 		A5AB9DF52472C1C000D86194 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A5AB9DF32472C1C000D86194 /* Model.xcdatamodeld */; };
 		A5DC35E3247D7E9F006DFEEB /* AlamoLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC35E2247D7E9E006DFEEB /* AlamoLoader.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		0F610B58F06DEC0DCBE52907 /* Pods_HomeWork14.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeWork14.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A54220CF248B9CF600FCC2AF /* JsonURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonURLs.swift; sourceTree = "<group>"; };
 		A5843BA1247AA4C20040BECE /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		A5AB9DF42472C1C000D86194 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		A5DC35E2247D7E9E006DFEEB /* AlamoLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoLoader.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			children = (
 				A5843BA1247AA4C20040BECE /* RealmModel.swift */,
 				A5DC35EA247D818A006DFEEB /* Weather.swift */,
+				A54220CF248B9CF600FCC2AF /* JsonURLs.swift */,
 				A5E1911924757ED5004FC133 /* ToDoList.swift */,
 				A5DC35E2247D7E9E006DFEEB /* AlamoLoader.swift */,
 			);
@@ -283,6 +286,7 @@
 				A5DC35EB247D818A006DFEEB /* Weather.swift in Sources */,
 				A5DD60B9246C51BF003BBC11 /* SceneDelegate.swift in Sources */,
 				A5E19118247568EF004FC133 /* TableViewCell.swift in Sources */,
+				A54220D0248B9CF600FCC2AF /* JsonURLs.swift in Sources */,
 				A5E1910E2473F5D9004FC133 /* SecondViewController.swift in Sources */,
 				A5DC35E3247D7E9F006DFEEB /* AlamoLoader.swift in Sources */,
 				A5DC35ED247D832C006DFEEB /* WeatherPersistance.swift in Sources */,

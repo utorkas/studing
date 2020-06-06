@@ -7,13 +7,15 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Category {
+class Category: Object {
     var main: NSDictionary?
     var weather: NSArray?
-    var dt_txt: String?
-    var temp: Double?
-    init?(data: NSDictionary){
+    @objc dynamic var dt_txt: String?
+    @objc dynamic var temp: String?
+    convenience init?(data: NSDictionary){
+        self.init()
         guard let main = data["main"] as? NSDictionary,
             let weather = data["weather"] as? NSArray,
             let temp = main["temp"] as? Double,
@@ -21,8 +23,7 @@ class Category {
         self.main = main
         self.weather = weather
         self.dt_txt = dx_txt
-        self.temp = temp
-
+        self.temp = String(format: "%.0f", temp - 273.15)
     }
 }
 

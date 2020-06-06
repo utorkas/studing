@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import RealmSwift
 
 protocol  AlamoCurrentWeatherDelegate {
     func cities (city: String, temp: Double)
@@ -17,9 +18,10 @@ class AlamoLoader {
     var city = ""
     var temp = 0.0
     var delegate: AlamoCurrentWeatherDelegate?
-    
+    var forecast = URLs()
+    private let realm = try! Realm()
     func loadWeather( completion: @escaping ([Category]) -> Void ){
-        AF.request("https://api.openweathermap.org/data/2.5/forecast?q=Moscow&appid=133abbdb38a2cae900c7599f329803ed").responseJSON{
+        AF.request(forecast.fiveDays).responseJSON{
             response in
            debugPrint(response)
             if let objects = response.value,
@@ -29,7 +31,11 @@ class AlamoLoader {
                     let array = jsonDict["list"] as! NSArray
                     for item in array {
                         if let category = Category(data: item as! NSDictionary)
-                        { categories.append(category)}
+                        { categories.append(category)
+                            try! self.realm.write {
+                                self.realm.add(categories)
+                            }
+                        }
                     }
                 DispatchQueue.main.async {
                     completion(categories)
@@ -39,7 +45,7 @@ class AlamoLoader {
     }
     
     func loadCurrentWeather () {
-        AF.request("https://api.openweathermap.org/data/2.5/weather?q=Moscow&appid=133abbdb38a2cae900c7599f329803ed").responseJSON { response in
+        AF.request(forecast.current).responseJSON { response in
             debugPrint(response)
             if let objects = response.value,
             let jsonDict = objects as? NSDictionary{

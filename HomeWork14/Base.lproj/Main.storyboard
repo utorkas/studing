@@ -133,15 +133,24 @@
                                     <outlet property="delegate" destination="p8Z-rx-XfX" id="HdR-Xh-vRO"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2l-kp-REN">
+                                <rect key="frame" x="324" y="44" width="70" height="30"/>
+                                <state key="normal" title="Обновить"/>
+                                <connections>
+                                    <action selector="updateData:" destination="p8Z-rx-XfX" eventType="touchUpInside" id="DDu-t1-axP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="sHE-Y2-rcJ" firstAttribute="centerX" secondItem="atZ-86-bdH" secondAttribute="centerX" id="3Wq-C9-DfI"/>
+                            <constraint firstItem="b2l-kp-REN" firstAttribute="top" secondItem="bDB-ZF-C3a" secondAttribute="top" id="Jb8-He-oMX"/>
                             <constraint firstItem="apb-J5-r8C" firstAttribute="leading" secondItem="bDB-ZF-C3a" secondAttribute="leading" id="Jd0-z9-mL6"/>
                             <constraint firstItem="sHE-Y2-rcJ" firstAttribute="top" secondItem="LQB-Rd-l7i" secondAttribute="bottom" constant="30" id="JzF-QB-8qy"/>
                             <constraint firstItem="LQB-Rd-l7i" firstAttribute="centerX" secondItem="atZ-86-bdH" secondAttribute="centerX" id="bQ3-N5-vMW"/>
                             <constraint firstItem="LQB-Rd-l7i" firstAttribute="top" secondItem="bDB-ZF-C3a" secondAttribute="top" constant="50" id="dcl-3l-Gfw"/>
                             <constraint firstItem="bDB-ZF-C3a" firstAttribute="trailing" secondItem="apb-J5-r8C" secondAttribute="trailing" id="dqw-X7-BmY"/>
+                            <constraint firstItem="bDB-ZF-C3a" firstAttribute="trailing" secondItem="b2l-kp-REN" secondAttribute="trailing" constant="20" id="eY5-cU-H0U"/>
                             <constraint firstItem="bDB-ZF-C3a" firstAttribute="bottom" secondItem="apb-J5-r8C" secondAttribute="bottom" id="hKN-gx-FmO"/>
                             <constraint firstItem="apb-J5-r8C" firstAttribute="top" secondItem="sHE-Y2-rcJ" secondAttribute="bottom" constant="30" id="xbm-JG-f62"/>
                         </constraints>
@@ -276,18 +285,12 @@
                                                 <action selector="addTask:" destination="2IP-MO-DBp" eventType="touchUpInside" id="7Qk-1q-i8m"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enC-tN-vN3">
-                                            <rect key="frame" x="20" y="7" width="30" height="30"/>
-                                            <state key="normal" title="Edit"/>
-                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstItem="hL3-au-9n8" firstAttribute="centerY" secondItem="Etr-qf-Leb" secondAttribute="centerY" id="BFs-bZ-fTD"/>
                                         <constraint firstItem="TWi-02-xPL" firstAttribute="centerY" secondItem="Etr-qf-Leb" secondAttribute="centerY" id="BPd-ON-aOC"/>
-                                        <constraint firstItem="enC-tN-vN3" firstAttribute="leading" secondItem="Etr-qf-Leb" secondAttribute="leading" constant="20" id="BRV-Wl-Ozc"/>
                                         <constraint firstAttribute="trailing" secondItem="TWi-02-xPL" secondAttribute="trailing" constant="20" id="ZzQ-0f-teY"/>
-                                        <constraint firstItem="enC-tN-vN3" firstAttribute="centerY" secondItem="Etr-qf-Leb" secondAttribute="centerY" id="tSM-Rs-e46"/>
                                         <constraint firstItem="hL3-au-9n8" firstAttribute="centerX" secondItem="Etr-qf-Leb" secondAttribute="centerX" id="vvU-GH-ffB"/>
                                     </constraints>
                                 </view>
