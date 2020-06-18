@@ -17,16 +17,14 @@ class SecondViewController: UIViewController {
         self.alert(title: "Добавить задачу", message: "Введите название задачи", style: .alert)
     }
     func alert( title: String, message: String, style: UIAlertController.Style){
-        
         let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
         
         let action = UIAlertAction(title: "Добавить", style: .default) { (action) in
             let text = alertController.textFields?.first?.text
             saveData(name: text!, isDone: false)
-            self.toDoTableView.reloadData() }
-        
+            self.toDoTableView.reloadData()
+        }
         let cancelButton = UIAlertAction(title: "Отменить", style: .cancel)
-        
         alertController.addTextField(configurationHandler: nil)
         alertController.addAction(action)
         alertController.addAction(cancelButton)
@@ -75,7 +73,6 @@ extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
                 self.toDoTableView.reloadData()
             }
             let cancelButton = UIAlertAction(title: "Отменить", style: .cancel)
-            
             alertController.addTextField(configurationHandler: nil)
             alertController.addAction(action)
             alertController.addAction(cancelButton)
