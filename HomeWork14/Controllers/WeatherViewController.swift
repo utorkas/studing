@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class WeatherViewController: UIViewController {
 
  var categories: [Category] = []
@@ -17,9 +16,6 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var alamoTempCurrent: UILabel!
     @IBOutlet weak var alamoTableView: UITableView!
     
-    @IBAction func updateData(_ sender: Any) {
-                
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         AlamoLoader().loadWeather { categories in
@@ -28,8 +24,8 @@ class WeatherViewController: UIViewController {
         let loader = AlamoLoader()
         loader.delegate = self
         loader.loadCurrentWeather()
-        print(AddOrUpdate().weatherObjects.count)
-        
+        alamoCity.text = WeatherPersistance.shared.cityName
+        alamoTempCurrent.text = WeatherPersistance.shared.currentTemp
     }
     
 }
@@ -50,7 +46,6 @@ extension WeatherViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AlamoCell") as! AlamoCell
         let model = AddOrUpdate().weatherObjects[indexPath.row]
-       // AddOrUpdate.addOrUpdate.insertOrUpdate(date: categories[indexPath.row].dt_txt, temperature: categories[indexPath.row].temp, id: categories[indexPath.row].id)
         cell.alamoDate.text = model.dt_txt
         cell.alamoTemp.text = model.temp
         return cell

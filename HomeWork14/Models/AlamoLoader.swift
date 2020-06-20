@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import RealmSwift
 
 protocol  AlamoCurrentWeatherDelegate {
     func cities (city: String, temp: Double)
@@ -18,19 +19,23 @@ class AlamoLoader {
     var temp = 0.0
     var delegate: AlamoCurrentWeatherDelegate?
     var forecast = URLs()
-   
+   private let realm = try! Realm()
     func loadWeather( completion: @escaping ([Category]) -> Void ){
         AF.request(forecast.fiveDays).responseJSON{
             response in
            debugPrint(response)
             if let objects = response.value,
             let jsonDict = objects as? NSDictionary{
-                     var categories: [Category] = []
-                    let array = jsonDict["list"] as! NSArray
+                var categories: [Category] = []
+                AddOrUpdate.addOrUpdate.deleteData()
+                let array = jsonDict["list"] as! NSArray
                 for item in array {
                         if let category = Category(data: item as! NSDictionary) {
-                            categories.append(category)
-                            AddOrUpdate.addOrUpdate.insertOrUpdate()
+                            try! self.realm.write{
+                                categories.append(category)
+                                self.realm.add(categories)
+                            }
+                            
                         }
                     }
                 DispatchQueue.main.async {
